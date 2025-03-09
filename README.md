@@ -1,4 +1,4 @@
 # johntorb.org
 My personal portfolio website.
 
-[johntorb.org](johntorb.org)
+[johntorb.org](https://www.johntorb.org)
