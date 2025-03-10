@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { DM_Mono } from 'next/font/google';
 
-export const font = DM_Mono({
+export const customFont = DM_Mono({
   weight: ['300'],
   subsets: ['latin'],
 });
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${font.className} antialiased`}>
+      <body className={`${customFont.className} antialiased`}>
         {children}
       </body>
     </html>
