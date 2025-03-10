@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { DM_Sans } from 'next/font/google';
+import { DM_Mono } from 'next/font/google';
 
-export const font = DM_Sans({
+export const font = DM_Mono({
+  weight: ['300'],
   subsets: ['latin'],
 });
 
