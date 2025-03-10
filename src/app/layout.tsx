@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { DM_Mono } from 'next/font/google';
 
-export const customFont = DM_Mono({
+const customFont = DM_Mono({
   weight: ['300'],
   subsets: ['latin'],
 });
