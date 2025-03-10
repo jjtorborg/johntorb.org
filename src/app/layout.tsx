@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { DM_Sans } from 'next/font/google';
 
-export const font = DM_Sans();
+export const font = DM_Sans({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'John Torborg | Full Stack Developer',
