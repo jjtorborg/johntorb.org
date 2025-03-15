@@ -21,8 +21,10 @@ body {
 
 .header__title {
   padding: 10px;
+  padding-right: 30px;
   font-size: 32px;
   margin: 0;
+  white-space: nowrap;
 }
 
 .intro {
