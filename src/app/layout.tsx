@@ -1,11 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { DM_Mono } from 'next/font/google';
-
-const customFont = DM_Mono({
-  weight: ['300'],
-  subsets: ['latin'],
-});
+import { bodyFont } from './fonts';
 
 export const metadata: Metadata = {
   title: 'John Torborg | Full Stack Developer',
@@ -19,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${customFont.className} antialiased`}>
+      <body className={`${bodyFont.className} antialiased`}>
         {children}
       </body>
     </html>
