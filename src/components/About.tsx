@@ -1,8 +1,6 @@
-import { bodyFont } from "../app/fonts";
-
 export default function About() {
     return (
-        <div className={`about ${bodyFont.className}`}>
+        <div id="about" className="about">
             <h2 className="about__title">
                 About Me
             </h2>

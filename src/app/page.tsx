@@ -1,10 +1,10 @@
-import Header from '../components/Header';
-import Intro from '../components/Intro';
-import About from '../components/About';
+import Header from "../components/Header";
+import About from "../components/About";
+import { Intro } from "../components/Intro";
 
 export default function Home() {
     return (
-        <main>
+        <main className="home">
             <Header />
             <Intro />
             <About />

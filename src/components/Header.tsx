@@ -1,36 +1,20 @@
-'use client'
-
-import { useState, useEffect } from 'react';
-import { headerFont } from '../app/fonts';
-import { Tabs } from './Tabs';
+import Link from "next/link";
 
 export default function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 0);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    });
-
     return (
-        <header className={`header ${headerFont.className}`}>
-            <h1 className='header__title'>
-                {isScrolled ? 'JT' : 'JOHN TORBORG'}
-            </h1>
-            <Tabs tabs={
-                [
-                  { title: 'About', value: 'About' },
-                  { title: 'Experience', value: 'Experience' },
-                  { title: 'Projects', value: 'Projects' },
-                  { title: 'Contact', value: 'Contact' },
-                ]
-            } />
+        <header className="header">
+            <Link className="header__title" href="#home">
+                JT
+            </Link>
+            <Link className="header__link" href="#about">
+                About
+            </Link>
+            <Link className="header__link" href="#experience">
+                Experience
+            </Link>
+            <Link className="header__link" href="#contact">
+                Contact
+            </Link>
         </header>
     )
 }

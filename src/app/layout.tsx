@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { bodyFont } from './fonts';
+import type { Metadata } from "next";
+import "./globals.css";
+import { bodyFont } from "./fonts";
 
 export const metadata: Metadata = {
-  title: 'John Torborg | Full Stack Developer',
-  description: 'Personal portfolio website',
+  title: "John Torborg | Full Stack Developer",
+  description: "Personal portfolio website",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={`${bodyFont.className} antialiased`}>
         {children}
       </body>

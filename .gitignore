@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# npm
+.npmrc
+
 # next.js
 /.next/
 /out/
