@@ -6,8 +6,8 @@ import { cn } from "../lib/utils";
 import { TypewriterEffectSmooth } from "./TypewriterEffect";
 
 export function Intro() {
-    const name = [{ text: 'John', className: `${cn("md:text-4xl text-xl text-white relative z-2")}` }, { text: 'Torborg', className: `${cn("md:text-4xl text-xl text-white relative z-2")}` }];
-    // const words = [{ text: 'Full' }, { text: 'Stack' }, { text: 'Developer' }];
+    const name = [{ text: 'John', className: `${cn("md:text-4xl text-xl relative z-2")}` }, { text: 'Torborg', className: `${cn("md:text-4xl text-xl relative z-2")}` }];
+    const words = [{ text: 'Full', className: "text-base relative z-2" },{ text: 'Stack', className: "text-base relative z-2" }, { text: 'Developer', className: "text-base relative z-2" }];
 
     return (
         <div className="flex items-center justify-center w-screen">
@@ -16,13 +16,15 @@ export function Intro() {
                     style={{ "--radial-gradient-stops": "transparent 0%, black 80%" } as React.CSSProperties}
                 />
                 <Boxes />
-                <h1 className={cn("md:text-4xl text-xl text-white relative z-2")}>
-                    {/* <TypewriterEffectSmooth words={name} /> */}
+                {/* <h1 className={cn("md:text-4xl text-xl relative z-2")}>
                     John Torborg
-                </h1>
-                <p className="text-center mt-2 text-neutral-300 relative z-2">
+                </h1> */}
+                {/* <p className="text-center mt-2 text-neutral-300 relative z-2">
                     Full Stack Developer
-                </p>
+                    </p> */}
+                    
+                <TypewriterEffectSmooth words={name} />
+                <TypewriterEffectSmooth words={words} />
             </div>
         </div>
     );
