@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 export const metadata: Metadata = {
     metadataBase: new URL('https://johntorb.org'),
     title: 'John Torborg | Full Stack Developer',
-    description: 'Welcome to my personal portfolio website.',
+    description: 'I am a full stack software developer with 5 years of experience building enterprise-scale web services.',
     applicationName: 'John Torborg',
     keywords: ['John Torborg', 'portfolio', 'personal', 'website', 'developer', 'designer', 'engineer', 'software'],
 };
