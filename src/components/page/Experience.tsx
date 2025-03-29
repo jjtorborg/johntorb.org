@@ -2,6 +2,16 @@ import { Timeline } from '../effects/Timeline';
 import RenaissanceLogo from '../../public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
 
+export function KebabSpacer() {
+    return (
+        <div className='flex flex-col items-center justify-center space-y-3 p-5'>
+            <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
+            <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
+            <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
+        </div>
+    );
+}
+
 export default function Experience() {
     const renaissanceLink = 'https://www.renaissance.com/';
     const logoClassName = 'h-6';
@@ -29,8 +39,7 @@ export default function Experience() {
             title: (
                 <>
                     2024
-                    <br/>
-                    <br/>
+                    <KebabSpacer />
                     2022
                 </>
             ),
@@ -62,8 +71,7 @@ export default function Experience() {
             title: (
                 <>
                     2021
-                    <br/>
-                    <br/>
+                    <KebabSpacer />
                     2020
                 </>
             ),
