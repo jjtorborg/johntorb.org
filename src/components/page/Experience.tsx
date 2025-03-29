@@ -3,6 +3,9 @@ import RenaissanceLogo from '../../public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
 
 export default function Experience() {
+    const renaissanceLink = 'https://www.renaissance.com/';
+    const logoClassName = 'h-6';
+
     const data = [
         {
             title: '2025',
@@ -10,7 +13,8 @@ export default function Experience() {
                 <>
                     <ExperienceHeader
                         title='Software Engineer III'
-                        logo={ <RenaissanceLogo className='h-6' />}
+                        logo={ <RenaissanceLogo className={logoClassName} /> }
+                        logoLink={renaissanceLink}
                     />
 
                     <ul className='list-disc'>
@@ -34,7 +38,8 @@ export default function Experience() {
                 <>
                     <ExperienceHeader
                         title='Software Engineer II'
-                        logo={ <RenaissanceLogo className='h-6' />}
+                        logo={ <RenaissanceLogo className={logoClassName} /> }
+                        logoLink={renaissanceLink}
                     />
 
                     <ul className='list-disc'>
@@ -66,7 +71,8 @@ export default function Experience() {
                 <>
                     <ExperienceHeader
                         title='Software Engineer I'
-                        logo={ <RenaissanceLogo className='h-6' />}
+                        logo={ <RenaissanceLogo className={logoClassName} /> }
+                        logoLink={renaissanceLink}
                     />
 
                     <ul className='list-disc'>
@@ -88,7 +94,8 @@ export default function Experience() {
                 <>
                     <ExperienceHeader
                         title='Software Engineering Intern'
-                        logo={ <RenaissanceLogo className='h-6' />}
+                        logo={ <RenaissanceLogo className={logoClassName} /> }
+                        logoLink={renaissanceLink}
                     />
 
                     <ul className='list-disc'>
@@ -106,7 +113,8 @@ export default function Experience() {
                 <>
                     <ExperienceHeader
                         title='Software Engineering Intern'
-                        logo={ <RenaissanceLogo className='h-6' />}
+                        logo={ <RenaissanceLogo className={logoClassName} /> }
+                        logoLink={renaissanceLink}
                     />
 
                     <ul className='list-disc'>
