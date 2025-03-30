@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-
 interface ExperienceHeaderProps {
     title: string;
     logo?: React.ReactNode;
@@ -25,7 +24,7 @@ export default function ExperienceHeader({ title, logo, logoLink }: ExperienceHe
                 >
                     {logo}
                 </Link>
-                <span className='absolute left-0 -bottom-1 h-[2px] w-full bg-white rounded-full transition-transform duration-300 origin-right scale-x-0 group-hover:origin-left group-hover:scale-x-100' />
+                <span className={`absolute left-0 -bottom-1 h-[2px] w-full bg-(--foreground) rounded-full transition-transform duration-300 origin-right scale-x-0 group-hover:origin-left group-hover:scale-x-100`} />
             </div>
         </div>
     );

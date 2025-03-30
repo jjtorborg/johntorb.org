@@ -2,16 +2,6 @@ import { Timeline } from '../effects/Timeline';
 import RenaissanceLogo from '../../public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
 
-export function KebabSpacer() {
-    return (
-        <div className='flex flex-col items-center justify-center space-y-3 p-5'>
-            <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
-            <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
-            <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
-        </div>
-    );
-}
-
 export default function Experience() {
     const renaissanceLink = 'https://www.renaissance.com/';
     const logoClassName = 'h-6';
@@ -146,4 +136,18 @@ export default function Experience() {
             </div>
         </div>
     )
+}
+
+export function SpacerDot() {
+    return <span className="w-1 h-1 bg-gray-500 rounded-full"/>;
+}
+
+export function KebabSpacer() {
+    return (
+        <div className='flex flex-col items-center justify-center space-y-3 p-5'>
+            <SpacerDot />
+            <SpacerDot />
+            <SpacerDot />
+        </div>
+    );
 }

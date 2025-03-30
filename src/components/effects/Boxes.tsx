@@ -10,7 +10,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
         const useWhite = true;
 
         if (useWhite) {
-            return '#ffffff';
+            return 'var(--foreground)';
         } else {
             return getRandomColor();
         }
