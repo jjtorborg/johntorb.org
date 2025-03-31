@@ -1,10 +1,16 @@
+'use client'
+
+import dynamic from 'next/dynamic';
 import { Timeline } from '../effects/Timeline';
 import RenaissanceLogo from '../../public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
+import { useMediaQuery } from 'react-responsive';
 
-export default function Experience() {
+const Experience = dynamic(() => Promise.resolve(() => {
     const renaissanceLink = 'https://www.renaissance.com/';
     const logoClassName = 'h-6';
+
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
     const data = [
         {
@@ -26,7 +32,7 @@ export default function Experience() {
             ),
         },
         {
-            title: (
+            title: isMobile ? '2022 - 2024' : (
                 <>
                     2024
                     <KebabSpacer />
@@ -58,7 +64,7 @@ export default function Experience() {
             ),
         },
         {
-            title: (
+            title: isMobile ? '2020 - 2021' : (
                 <>
                     2021
                     <KebabSpacer />
@@ -135,11 +141,13 @@ export default function Experience() {
                 <Timeline data={data} />
             </div>
         </div>
-    )
-}
+    );
+}), { ssr: false });
+
+export default Experience;
 
 export function SpacerDot() {
-    return <span className="w-1 h-1 bg-gray-500 rounded-full"/>;
+    return <span className='w-1 h-1 bg-gray-500 rounded-full'/>;
 }
 
 export function KebabSpacer() {

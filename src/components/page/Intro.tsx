@@ -5,7 +5,7 @@ import { Boxes } from '../effects/Boxes';
 import { TypewriterEffectSmooth } from '../effects/Typewriter';
 
 export default function Intro() {
-    const nameClass = `${cn('md:text-8xl text-4xl relative z-2 font-bold')}`;
+    const nameClass = 'md:text-8xl text-4xl relative z-2 font-bold';
     const name = [
         {
             text: 'John',
@@ -17,8 +17,8 @@ export default function Intro() {
         }
     ];
 
-    const titleClass = `${cn('md:text-4xl text-base relative z-2')}`;
-    const titleClassBlue = `${cn('md:text-4xl text-base relative z-2 text-blue-500')}`;
+    const titleClass = 'md:text-4xl text-base relative z-2';
+    const titleClassBlue = `${cn(titleClass, 'text-blue-500')}`;
     const title = [
         {
             text: 'Full',
