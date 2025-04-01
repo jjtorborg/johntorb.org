@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Header() {
     return (
-        <header className='bg-[#0e0e0e] fixed top-0 w-screen flex flex-row z-10'>
+        <header className='bg-[#0e0e0e] border-b border-[#2d2d2d] fixed top-0 w-screen flex flex-row z-10'>
             <HeaderTitle />
             <HeaderLink text='About' />
             <HeaderLink text='Experience' />

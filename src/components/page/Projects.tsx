@@ -5,7 +5,7 @@ export default function Projects() {
                 Projects
             </h1>
             <p className='relative mx-auto max-w-2xl pb-32 pt-4 text-white antialiased'>
-                I have worked on a number of projects in my career. Here are a few of them.
+                Coming soon...
             </p>
         </div>
     )

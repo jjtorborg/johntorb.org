@@ -5,7 +5,7 @@ export default function Skills() {
                 Skills
             </h1>
             <p className='relative mx-auto max-w-2xl pb-32 pt-4 text-white antialiased'>
-                I have experience with a number of technologies. Here are a few of them.
+                Coming soon...
             </p>
         </div>
     )
