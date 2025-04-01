@@ -35,7 +35,7 @@ export default function Intro() {
     ];
 
     return (
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center pt-[58px]'>
             <div className='md:h-200 md:w-400 h-175 w-200 relative overflow-hidden bg-black flex flex-col items-center justify-center rounded-lg'>
                 <div className='absolute inset-0 w-full h-full bg-black z-2 [mask-image:radial-gradient(var(--radial-gradient-stops))] pointer-events-none'
                     style={{ '--radial-gradient-stops': 'transparent 0%, black 80%' } as React.CSSProperties}

@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const Experience = dynamic(() => Promise.resolve(() => {
     const renaissanceLink = 'https://www.renaissance.com/';
-    const logoClassName = 'h-6';
+    const logoClassName = 'h-6 fill-(--hoverable) group-hover:fill-(--foreground) transition-colors duration-300 ease-in-out';
 
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
