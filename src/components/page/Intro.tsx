@@ -1,8 +1,10 @@
 'use client';
 
+import React from 'react';
 import { cn } from '../../lib/utils';
 import { Boxes } from '../effects/Boxes';
 import { TypewriterEffectSmooth } from '../effects/Typewriter';
+import { motion } from 'framer-motion';
 
 export default function Intro() {
     const nameClass = 'md:text-8xl text-4xl relative z-2 font-bold';
@@ -43,6 +45,15 @@ export default function Intro() {
                 <Boxes />
                 <TypewriterEffectSmooth words={name} />
                 <TypewriterEffectSmooth words={title} />
+                <motion.a
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 1.5 }}
+                    href='#about'
+                    className='absolute bottom-4 z-5 flex items-center justify-center w-12 h-12 border-[3px] border-(--hoverable) bg-transparent text-(--hoverable) hover:border-blue-500 hover:text-blue-500 rounded-full transition-transform hover:scale-105 ease-in-out duration-300'
+                >
+                    <span style={{ fontSize: '2.2rem', fontWeight: 'bold' }}>↓</span>
+                </motion.a>
             </div>
         </div>
     );
