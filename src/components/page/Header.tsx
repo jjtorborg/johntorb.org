@@ -8,7 +8,7 @@ export default function Header() {
             <HeaderLink text='Experience' />
             <HeaderLink text='Skills' />
             <HeaderLink text='Projects' />
-            <HeaderLink text='Contact' />
+            {/* <HeaderLink text='Contact' /> */}
         </header>
     )
 }
