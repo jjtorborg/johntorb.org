@@ -48,7 +48,7 @@ export default function Intro() {
                 <motion.a
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.5 }}
+                    transition={{ duration: 0.5, delay: 1 }}
                     href='#about'
                     className='absolute bottom-4 z-5 flex items-center justify-center w-12 h-12 border-[3px] border-(--hoverable) bg-transparent text-(--hoverable) hover:border-blue-500 hover:text-blue-500 rounded-full transition-transform hover:scale-105 ease-in-out duration-300'
                 >
