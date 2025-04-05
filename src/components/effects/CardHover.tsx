@@ -1,9 +1,9 @@
 'use client'
 
-import { cn } from "../../lib/utils";
-import { AnimatePresence, motion } from "motion/react";
-import Link from "next/link";
-import { useState } from "react";
+import { cn } from '../../lib/utils';
+import { AnimatePresence, motion } from 'motion/react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export const CardHover = ({
   items,
@@ -12,7 +12,7 @@ export const CardHover = ({
 }: {
   items: {
     title: string;
-    icon: string;
+    icon: React.ReactNode;
     link: string;
   }[];
   className?: string;
@@ -23,23 +23,23 @@ export const CardHover = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 py-10",
+        'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-10',
         className
       )}
     >
       {items.map((item, idx) => (
         <Link
           href={item?.link}
-          target="_blank"
+          target='_blank'
           key={item?.link}
-          className="relative group block p-[3px] h-full w-full"
+          className='relative group block p-[3px] h-full w-full'
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-blue-500 rounded-2xl flex self-center justify-self-center z-0"
+                className='absolute inset-0 h-full w-full bg-blue-500 rounded-xl flex self-center justify-self-center z-0'
                 layoutId={gridKey}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -48,13 +48,18 @@ export const CardHover = ({
                 }}
                 exit={{
                   opacity: 0,
-                  transition: { duration: 0.15, delay: 0.45},
+                  transition: { duration: 0.15, delay: 0.45 },
                 }}
               />
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
+            <div className='flex flex-row items-center group'>
+              <div className='px-1 grayscale group-hover:fill-blue-500'>
+                {item.icon}
+              </div>
+              <CardTitle className='px-3'>{item.title}</CardTitle>
+            </div>
           </Card>
         </Link>
       ))}
@@ -72,12 +77,12 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-1",
+        'rounded-xl h-full w-full overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-1',
         className
       )}
     >
-      <div className="relative z-2">
-        <div className="p-4">{children}</div>
+      <div className='relative z-2'>
+        <div className='p-4'>{children}</div>
       </div>
     </div>
   );
@@ -90,7 +95,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn('tracking-wide text-base', className)}>
       {children}
     </h4>
   );
@@ -105,7 +110,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        'mt-8 tracking-wide leading-relaxed text-sm',
         className
       )}
     >
