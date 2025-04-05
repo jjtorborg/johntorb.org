@@ -1,12 +1,11 @@
 'use client'
 
-import dynamic from 'next/dynamic';
 import { Timeline } from '../effects/Timeline';
 import RenaissanceLogo from '../../public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
 import { useMediaQuery } from 'react-responsive';
 
-const Experience = dynamic(() => Promise.resolve(() => {
+export default function Experience() {
     const renaissanceLink = 'https://www.renaissance.com/';
     const logoClassName = 'h-6 fill-(--hoverable) group-hover:fill-(--foreground) transition-colors duration-300 ease-in-out';
 
@@ -142,9 +141,7 @@ const Experience = dynamic(() => Promise.resolve(() => {
             </div>
         </div>
     );
-}), { ssr: false });
-
-export default Experience;
+};
 
 export function SpacerDot() {
     return <span className='w-1 h-1 bg-gray-500 rounded-full'/>;

@@ -10,7 +10,7 @@ export default function Header() {
             <HeaderLink text='Projects' />
             {/* <HeaderLink text='Contact' /> */}
         </header>
-    )
+    );
 }
 
 export function HeaderTitle() {
@@ -32,5 +32,5 @@ export function HeaderLink({ text }: { text: string }) {
         >
             {text}
         </Link>
-    )
+    );
 }
