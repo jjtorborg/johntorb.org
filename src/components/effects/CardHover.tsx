@@ -32,14 +32,14 @@ export const CardHover = ({
           href={item?.link}
           target='_blank'
           key={item?.link}
-          className='relative group block p-[3px] h-full w-full'
+          className='relative group block p-[5px] h-full w-full'
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className='absolute inset-0 h-full w-full bg-blue-500 rounded-xl flex self-center justify-self-center z-0'
+                className='absolute inset-0 h-[91%] w-[97%] bg-blue-500 rounded-xl flex self-center justify-self-center z-0'
                 layoutId={gridKey}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -55,9 +55,9 @@ export const CardHover = ({
           </AnimatePresence>
           <Card>
             <div className='flex flex-row items-center group'>
-              <div className='px-1 grayscale group-hover:fill-blue-500'>
+                <div className='px-1 grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out'>
                 {item.icon}
-              </div>
+                </div>
               <CardTitle className='px-3'>{item.title}</CardTitle>
             </div>
           </Card>
