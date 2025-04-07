@@ -37,7 +37,7 @@ export default function Skills() {
             {/* <h2 className='mx-auto max-w-5xl px-12 pb-8 pt-10 text-lg md:text-2xl font-bold'>
                 Frontend */}
                 <div className='max-w-5xl mx-auto px-8'>
-                    <CardHover items={[...frontendSkills, ...backendSkills]} gridKey='skills' />
+                    <CardHover items={allSkills} gridKey='skills' />
                 </div>
             {/* </h2> */}
         </div>
@@ -189,3 +189,7 @@ export const backendSkills = [
         link: 'https://www.jenkins.io/'
     }
 ];
+
+const allSkills = [...frontendSkills, ...backendSkills].sort((a, b) => 
+    a.title.localeCompare(b.title)
+);
