@@ -55,7 +55,7 @@ export const CardHover = ({
           </AnimatePresence>
           <Card>
             <div className='flex flex-row items-center group'>
-                <div className='px-1 grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out'>
+                <div className='px-1'>
                 {item.icon}
                 </div>
               <CardTitle className='px-3'>{item.title}</CardTitle>
