@@ -8,5 +8,5 @@ export default function Projects() {
                 Coming soon...
             </p>
         </div>
-    )
+    );
 }

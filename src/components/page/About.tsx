@@ -9,5 +9,5 @@ export default function About() {
                 I love building sleek, useful applications that solve real-world problems. 
             </p>
         </div>
-    )
+    );
 }
