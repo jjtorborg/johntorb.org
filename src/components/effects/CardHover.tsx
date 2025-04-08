@@ -39,7 +39,7 @@ export const CardHover = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className='absolute inset-0 h-[91%] w-[97%] bg-blue-500 rounded-xl flex self-center justify-self-center z-0'
+                className='absolute inset-0 h-[calc(100%-6px)] w-[calc(100%-6px)] bg-blue-500 rounded-xl flex self-center justify-self-center z-0'
                 layoutId={gridKey}
                 initial={{ opacity: 0 }}
                 animate={{

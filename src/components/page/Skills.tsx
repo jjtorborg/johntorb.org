@@ -34,12 +34,9 @@ export default function Skills() {
             <h1 className='mx-auto max-w-5xl px-8 pt-20 text-2xl md:pt-32 md:text-7xl font-bold'>
                 Skills
             </h1>
-            {/* <h2 className='mx-auto max-w-5xl px-12 pb-8 pt-10 text-lg md:text-2xl font-bold'>
-                Frontend */}
-                <div className='max-w-5xl mx-auto px-8'>
-                    <CardHover items={allSkills} gridKey='skills' />
-                </div>
-            {/* </h2> */}
+            <div className='max-w-5xl mx-auto px-8'>
+                <CardHover items={allSkills} gridKey='skills' />
+            </div>
         </div>
     )
 }

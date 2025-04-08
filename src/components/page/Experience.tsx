@@ -3,13 +3,26 @@
 import { Timeline } from '../effects/Timeline';
 import RenaissanceLogo from '../../public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
-import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 
 export default function Experience() {
     const renaissanceLink = 'https://www.renaissance.com/';
     const logoClassName = 'h-6 fill-(--hoverable) group-hover:fill-(--foreground) transition-colors duration-300 ease-in-out';
 
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+    const [isMobile, setIsMobile] = React.useState(true);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const data = [
         {
