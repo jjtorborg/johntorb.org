@@ -3,23 +3,32 @@
 import Link from 'next/link';
 import GitHubIcon from '../../public/icons/GitHubIcon';
 import LinkedInIcon from '../../public/icons/LinkedInIcon';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { useEffect } from 'react';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
 
-    // useEffect(() => {
-    //     function handleClickOutside() {
-    //         setIsMenuOpen(false);
-    //     }
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(event.target as Node) &&
+                buttonRef.current &&
+                !buttonRef.current.contains(event.target as Node)
+            ) {
+                setIsMenuOpen(false);
+            }
+        }
 
-    //     document.addEventListener('mousedown', handleClickOutside);
-    //     return () => {
-    //         document.removeEventListener('mousedown', handleClickOutside);
-    //     };
-    // }, []);
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     return (
         <header className='bg-[#0e0e0e] border-b border-[#2d2d2d] fixed top-0 w-screen flex flex-row z-10'>
@@ -50,7 +59,10 @@ export default function Header() {
             {/* Mobile view */}
             <div className='md:hidden w-screen flex justify-end'>
                 <button
-                    className='rounded-md group hover:bg-[#1e1e1e] transition-colors duration-200 ease-in-out'
+                    ref={buttonRef}
+                    className={`rounded-md group transition-colors duration-200 ease-in-out ${
+                        isMenuOpen ? 'bg-[#2d2d2d]' : 'hover:bg-[#1e1e1e]'
+                    }`}
                     style={{ padding: '7px', margin: '10px 13px' }}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label='Open menu'
@@ -58,13 +70,17 @@ export default function Header() {
                     <FaBars className='text-(--hoverable)' size={24} />
                 </button>
                 {isMenuOpen && (
-                    <div className='absolute top-full right-0 mt-2 w-[100px] bg-[#0e0e0e] shadow-lg z-20 flex flex-col rounded-md border border-[#2d2d2d]'>
+                    <div 
+                        className='absolute top-full mt-2 w-[150px] bg-[#0e0e0e] shadow-lg z-20 flex flex-col rounded-md border border-[#2d2d2d]'
+                        style={{ right: '7px' }}
+                        ref={menuRef}
+                    >
                         <nav className='flex flex-col items-start p-4 space-y-2'>
-                            <HeaderLink text='About' />
-                            <HeaderLink text='Experience' />
-                            <HeaderLink text='Skills' />
-                            <HeaderLink text='Projects' />
-                            <HeaderLink text='Contact' />
+                            <HeaderLink text='About' onClick={() => setIsMenuOpen(false)} />
+                            <HeaderLink text='Experience' onClick={() => setIsMenuOpen(false)} />
+                            <HeaderLink text='Skills' onClick={() => setIsMenuOpen(false)} />
+                            <HeaderLink text='Projects' onClick={() => setIsMenuOpen(false)} />
+                            <HeaderLink text='Contact' onClick={() => setIsMenuOpen(false)} />
                         </nav>
 
                         <div className='mt-2 flex justify-center space-x-4 p-4 border-t border-[#2d2d2d]'>
@@ -93,11 +109,12 @@ export function HeaderTitle() {
     );
 }
 
-export function HeaderLink({ text }: { text: string }) {
+export function HeaderLink({ text, onClick }: { text: string; onClick?: () => void }) {
     return (
         <Link
             className={`px-[10px] py-[3px] mx-[2px] my-[12px] flex justify-center items-center rounded-[8px] text-(--hoverable) hover:bg-[#1e1e1e] hover:text-(--foreground) transition-colors duration-200 ease-in-out`}
             href={`#${text.toLowerCase()}`}
+            onClick={onClick}
         >
             {text}
         </Link>
