@@ -90,7 +90,7 @@ export default function Contact() {
                     </button>
                     {isSending && (
                             <svg
-                                className='ml-4 mt-[2px] h-5 w-5 animate-spin text-(--foreground)'
+                                className='ml-3 mt-[2px] h-5 w-5 animate-spin text-(--foreground)'
                                 xmlns='http://www.w3.org/2000/svg'
                                 fill='none'
                                 viewBox='0 0 24 24'
