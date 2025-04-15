@@ -36,7 +36,7 @@ export default function Contact() {
             <h1 className='mx-auto max-w-5xl px-8 pb-8 pt-20 text-2xl md:pt-32 md:text-7xl font-bold'>
                 Contact Me
             </h1>
-            <form ref={form} onSubmit={sendEmail} className='mx-auto px-12 max-w-[90%] sm:max-w-[80%] lg:max-w-4xl'>
+            <form ref={form} onSubmit={sendEmail} className='mx-auto px-12 max-w-[95%] sm:max-w-[90%] md:max-w-2xl lg:max-w-4xl'>
                 <div className='mb-4'>
                     <label htmlFor='name' className={labelClassName}>
                         Name
@@ -78,7 +78,8 @@ export default function Contact() {
                 </div>
                 <button
                     type='submit'
-                    className='inline-flex justify-center rounded-md border border-transparent bg-(--hoverable) py-2 px-4 my-2 cursor-pointer text-sm md:text-base font-medium mb-1 shadow-sm text-(--background) hover:text-(--foreground) focus:text-(--foreground) hover:bg-blue-500 focus:bg-blue-500 hover:scale-105 ease-in-out duration-300'
+                    className='inline-flex justify-center rounded-md border border-transparent bg-(--hoverable) py-2 px-4 my-2 cursor-pointer text-sm md:text-base font-medium mb-1 shadow-sm text-(--background) hover:text-(--foreground) hover:bg-blue-500 hover:scale-105 focus:scale-105 focus:bg-blue-500 focus:text-(--foreground) focus:outline-0 ease-in-out duration-300'
+                    onClick={(e) => (e.currentTarget as HTMLButtonElement).blur()}
                 >
                     Send
                 </button>

@@ -26,8 +26,8 @@ export default function RootLayout({
             <body className={spaceGrotesk.className}>
                 <Analytics />
                 <SpeedInsights />
+                <Toaster position="bottom-center" richColors/>
                 {children}
-                <Toaster />
             </body>
         </html>
     );
