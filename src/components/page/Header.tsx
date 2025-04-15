@@ -31,7 +31,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header className='bg-[#0e0e0e] border-b border-[#2d2d2d] fixed top-0 w-screen flex flex-row z-10'>
+        <header className='bg-(--alt-background) border-b border-(--alt-border) fixed top-0 w-screen flex flex-row z-10'>
             <HeaderTitle />
 
             {/* Desktop view */}
@@ -61,7 +61,7 @@ export default function Header() {
                 <button
                     ref={buttonRef}
                     className={`rounded-md group transition-colors duration-200 ease-in-out ${
-                        isMenuOpen ? 'bg-[#2d2d2d]' : 'hover:bg-[#1e1e1e]'
+                        isMenuOpen ? 'bg-(--alt-border)' : 'hover:bg-[#1e1e1e]'
                     }`}
                     style={{ padding: '7px', margin: '10px 13px' }}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -71,7 +71,7 @@ export default function Header() {
                 </button>
                 {isMenuOpen && (
                     <div 
-                        className='absolute top-full mt-2 w-[150px] bg-[#0e0e0e] shadow-lg z-20 flex flex-col rounded-md border border-[#2d2d2d]'
+                        className='absolute top-full mt-2 w-[150px] bg-(--alt-background) shadow-lg z-20 flex flex-col rounded-md border border-(--alt-border)'
                         style={{ right: '7px' }}
                         ref={menuRef}
                     >
@@ -83,7 +83,7 @@ export default function Header() {
                             <HeaderLink text='Contact' onClick={() => setIsMenuOpen(false)} />
                         </nav>
 
-                        <div className='mt-2 flex justify-center space-x-4 p-4 border-t border-[#2d2d2d]'>
+                        <div className='mt-2 flex justify-center space-x-4 p-4 border-t border-(--alt-border)'>
                             <Link href='https://github.com/jjtorborg'>
                                 <GitHubIcon />
                             </Link>

@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Toaster } from '../components/effects/Toaster';
 import { Space_Grotesk } from 'next/font/google';
 import { Metadata } from 'next';
 
@@ -25,6 +26,7 @@ export default function RootLayout({
             <body className={spaceGrotesk.className}>
                 <Analytics />
                 <SpeedInsights />
+                <Toaster position="bottom-center" richColors/>
                 {children}
             </body>
         </html>
