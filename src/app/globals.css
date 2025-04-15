@@ -3,6 +3,8 @@
 :root {
   --background: black;
   --foreground: #ededed;
+  --alt-background: #0e0e0e;
+  --alt-border: #2d2d2d;
   --hoverable: #888888;
   --blue-500: #2196F3;
   scroll-behavior: smooth;
