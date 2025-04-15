@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import emailjs from 'emailjs-com';
+import { toast } from 'sonner';
 
 export default function Contact() {
     const form = useRef<HTMLFormElement | null>(null);
@@ -13,8 +14,17 @@ export default function Contact() {
             emailjs.sendForm(
                 'service_scbhz6d',
                 'template_2pj5u8m',
-                form.current
-            );
+                form.current,
+                '2QXBIDOuiOpDYSlAy'
+            )
+            .then((result) => {
+                if (result.status === 200) {
+                    toast.success('Message sent successfully!');
+                }
+                else {
+                    toast.error('Message failed to send. Please try again later.');
+                }
+            });
         }
     };
 
@@ -68,7 +78,7 @@ export default function Contact() {
                 </div>
                 <button
                     type='submit'
-                    className='inline-flex justify-center rounded-md border border-transparent bg-(--hoverable) py-2 px-4 my-2 cursor-pointer text-sm md:text-base font-medium mb-1 shadow-sm hover:bg-blue-500 focus:bg-blue-500 ransition-transform hover:scale-105 ease-in-out duration-300'
+                    className='inline-flex justify-center rounded-md border border-transparent bg-(--hoverable) py-2 px-4 my-2 cursor-pointer text-sm md:text-base font-medium mb-1 shadow-sm text-(--background) hover:text-(--foreground) focus:text-(--foreground) hover:bg-blue-500 focus:bg-blue-500 hover:scale-105 ease-in-out duration-300'
                 >
                     Send
                 </button>
