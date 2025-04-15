@@ -1,29 +1,33 @@
 'use client'
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { toast } from 'sonner';
 
 export default function Contact() {
     const form = useRef<HTMLFormElement | null>(null);
+    const [isSending, setIsSending] = useState(false);
 
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault();
 
         if (form.current) {
+            setIsSending(true);
             emailjs.sendForm(
                 'service_scbhz6d',
                 'template_2pj5u8m',
                 form.current,
-                '2QXBIDOuiOpDYSlAy'
+                'keapoppjTdGaAG2bi'
             )
             .then((result) => {
                 if (result.status === 200) {
                     toast.success('Message sent successfully!');
-                }
-                else {
+                } else {
                     toast.error('Message failed to send. Please try again later.');
                 }
+            })
+            .finally(() => {
+                setIsSending(false);
             });
         }
     };
@@ -76,13 +80,37 @@ export default function Contact() {
                         required
                     ></textarea>
                 </div>
-                <button
-                    type='submit'
-                    className='inline-flex justify-center rounded-md border border-transparent bg-(--hoverable) py-2 px-4 my-2 cursor-pointer text-sm md:text-base font-medium mb-1 shadow-sm text-(--background) hover:text-(--foreground) hover:bg-blue-500 hover:scale-105 focus:scale-105 focus:bg-blue-500 focus:text-(--foreground) focus:outline-0 ease-in-out duration-300'
-                    onClick={(e) => (e.currentTarget as HTMLButtonElement).blur()}
-                >
-                    Send
-                </button>
+                <div className='flex flex-row items-center'>
+                    <button
+                        type='submit'
+                        className='inline-flex items-center justify-center rounded-md border border-transparent bg-(--hoverable) py-2 px-4 my-2 cursor-pointer text-sm md:text-base font-medium mb-1 shadow-sm text-(--background) hover:text-(--foreground) hover:bg-blue-500 hover:scale-105 focus:scale-105 focus:bg-blue-500 focus:text-(--foreground) focus:outline-0 ease-in-out duration-300'
+                        onClick={(e) => (e.currentTarget as HTMLButtonElement).blur()}
+                    >
+                        Send
+                    </button>
+                    {isSending && (
+                            <svg
+                                className='ml-4 mt-[2px] h-5 w-5 animate-spin text-(--foreground)'
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                            >
+                                <circle
+                                    className='opacity-25'
+                                    cx='12'
+                                    cy='12'
+                                    r='10'
+                                    stroke='currentColor'
+                                    strokeWidth='4'
+                                ></circle>
+                                <path
+                                    className='opacity-75'
+                                    fill='var(--blue-500)'
+                                    d='M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z'
+                                ></path>
+                            </svg>
+                        )}
+                </div>
             </form>
         </div>
     );
