@@ -19,14 +19,14 @@ export default function Contact() {
     };
 
     const labelClassName = 'block text-sm md:text-base font-medium mb-1';
-    const inputClassName = 'mt-1 p-3 block w-xl rounded-md border border-(--alt-border) bg-(--alt-background) shadow-sm focus:outline-(--blue-500) focus:outline-2 sm:text-sm';
+    const inputClassName = 'mt-1 p-3 block w-full rounded-md border border-(--alt-border) bg-(--alt-background) shadow-sm focus:outline-(--blue-500) focus:outline-2 sm:text-sm';
 
     return (
-        <div id='contact' className='pb-64'>
+        <div id='contact' className='pb-40 sm:pb-64'>
             <h1 className='mx-auto max-w-5xl px-8 pb-8 pt-20 text-2xl md:pt-32 md:text-7xl font-bold'>
                 Contact Me
             </h1>
-            <form ref={form} onSubmit={sendEmail} className='mx-auto px-12 max-w-2xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl'>
+            <form ref={form} onSubmit={sendEmail} className='mx-auto px-12 max-w-[90%] sm:max-w-[80%] lg:max-w-4xl'>
                 <div className='mb-4'>
                     <label htmlFor='name' className={labelClassName}>
                         Name
@@ -35,6 +35,7 @@ export default function Contact() {
                         type='text'
                         id='name'
                         name='name'
+                        placeholder='John Smith'
                         className={inputClassName}
                         required
                     />
@@ -47,6 +48,7 @@ export default function Contact() {
                         type='email'
                         id='email'
                         name='email'
+                        placeholder='example@example.com'
                         className={inputClassName}
                         required
                     />
@@ -59,6 +61,7 @@ export default function Contact() {
                         id='message'
                         name='message'
                         rows={7}
+                        placeholder='Type your message here.'
                         className={inputClassName}
                         required
                     ></textarea>
