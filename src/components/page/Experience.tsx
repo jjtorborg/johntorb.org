@@ -37,7 +37,8 @@ export default function Experience() {
 
                     <ul className='list-disc'>
                         <li>
-                            Coming soon...
+                            Mentored junior engineers through code reviews, pair programming, and regular 1:1s,
+                            fostering growth in technical skills and improving overall team productivity.
                         </li>
                     </ul>
                 </>
