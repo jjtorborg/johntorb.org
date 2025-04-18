@@ -42,7 +42,7 @@ export default function Header() {
                 <HeaderLink text='Projects' />
                 <HeaderLink text='Contact' />
                 
-                <div className='ml-auto flex items-center space-x-4 mr-5'>
+                <div className='ml-auto flex items-center space-x-4 mr-6'>
                     <Link
                         href='https://github.com/jjtorborg'
                     >
