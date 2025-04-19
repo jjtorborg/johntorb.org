@@ -14,6 +14,29 @@ export const metadata: Metadata = {
     description: 'I am a full stack software developer with 5 years of experience building enterprise-scale web services.',
     applicationName: 'John Torborg',
     keywords: ['John Torborg', 'portfolio', 'personal', 'website', 'developer', 'designer', 'engineer', 'software'],
+    icons: [
+        {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '192x192',
+            url: '/favicon/web-app-manifest-192x192.png'
+        },
+        {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '512x512',
+            url: '/favicon/web-app-manifest-512x512.png'
+        },
+        {
+            rel: 'apple-touch-icon',
+            url: '/favicon/apple-icon.png'
+        },
+        {
+            rel: 'icon',
+            type: 'image/x-icon',
+            url: '/favicon/favicon.ico'
+        }
+    ]
 };
 
 export default function RootLayout({

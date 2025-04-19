@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link';
-import GitHubIcon from '../../public/icons/GitHubIcon';
-import LinkedInIcon from '../../public/icons/LinkedInIcon';
+import GitHubIcon from 'public/icons/GitHubIcon';
+import LinkedInIcon from 'public/icons/LinkedInIcon';
 import { useState, useRef } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { useEffect } from 'react';

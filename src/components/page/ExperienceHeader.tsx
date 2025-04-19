@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import ExternalLinkGlyph from '../../public/ExternalLinkGlyph';
+import ExternalLinkGlyph from 'public/ExternalLinkGlyph';
 
 interface ExperienceHeaderProps {
     title: string;

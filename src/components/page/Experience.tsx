@@ -1,7 +1,7 @@
 'use client'
 
 import { Timeline } from '../effects/Timeline';
-import RenaissanceLogo from '../../public/RenaissanceLogo';
+import RenaissanceLogo from 'public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
 import React from 'react';
 
