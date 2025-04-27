@@ -8,6 +8,8 @@ import { FaBars } from 'react-icons/fa';
 import { useEffect } from 'react';
 
 export default function Header() {
+    const resumeUrl = 'https://drive.google.com/file/d/16OjG0IjmhAcIvGNVYkNK5WCOZjnw_6NY/view?usp=drive_link';
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
@@ -41,6 +43,7 @@ export default function Header() {
                 <HeaderLink text='Skills' />
                 <HeaderLink text='Projects' />
                 <HeaderLink text='Contact' />
+                <HeaderLink text='Resume' link={resumeUrl} />
                 
                 <div className='ml-auto flex items-center space-x-4 mr-6'>
                     <Link
@@ -81,6 +84,7 @@ export default function Header() {
                             <HeaderLink text='Skills' onClick={() => setIsMenuOpen(false)} />
                             <HeaderLink text='Projects' onClick={() => setIsMenuOpen(false)} />
                             <HeaderLink text='Contact' onClick={() => setIsMenuOpen(false)} />
+                            <HeaderLink text='Resume' link={resumeUrl} onClick={() => setIsMenuOpen(false)} />
                         </nav>
 
                         <div className='mt-2 flex justify-center space-x-4 p-4 border-t border-(--alt-border)'>
@@ -109,11 +113,12 @@ export function HeaderTitle() {
     );
 }
 
-export function HeaderLink({ text, onClick }: { text: string; onClick?: () => void }) {
+export function HeaderLink({ text, link, onClick }: { text: string; link?: string; onClick?: () => void }) {
     return (
         <Link
             className={`px-[10px] py-[3px] mx-[2px] my-[12px] flex justify-center items-center rounded-[8px] text-(--hoverable) hover:bg-[#1e1e1e] hover:text-(--foreground) transition-colors duration-200 ease-in-out`}
-            href={`#${text.toLowerCase()}`}
+            href={link ?? `#${text.toLowerCase()}`}
+            target={link ? '_blank' : undefined}
             onClick={onClick}
         >
             {text}
