@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import React from 'react';
 import { cn } from '../../lib/utils';
@@ -50,7 +50,7 @@ export default function Intro() {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1 }}
                     href='#about'
-                    className='absolute bottom-4 z-2 flex items-center justify-center w-12 h-12 border-[3px] border-(--hoverable) bg-transparent text-(--hoverable) hover:border-blue-500 hover:text-blue-500 rounded-full transition-transform hover:scale-105 ease-in-out duration-300'
+                    className='absolute bottom-4 z-2 flex items-center justify-center w-12 h-12 border-[3px] border-(--hoverable) bg-transparent text-(--hoverable) hover:border-blue-500 hover:text-blue-500 focus:outline-0 focus:text-blue-500 focus:border-blue-500 rounded-full transition-transform hover:scale-105 focus:scale-105 ease-in-out duration-300'
                 >
                     <span style={{ fontSize: '2.2rem', fontWeight: 'bold' }}>↓</span>
                 </motion.a>
