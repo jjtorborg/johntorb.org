@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { cn } from '../../lib/utils';
 import { motion } from 'motion/react';
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
-    const rows = new Array(150).fill(1);
-    const cols = new Array(100).fill(1);
+    const [rows, setRows] = useState<number[]>([]);
+    const [cols, setCols] = useState<number[]>([]);
+
+    const calculateGrid = (rowCount: number, colCount: number) => {
+        setRows(new Array(rowCount).fill(1));
+        setCols(new Array(colCount).fill(1));
+    };
+    
+    useEffect(() => {
+        const rowCount = Math.min(150, Math.floor(window.innerWidth / 10));
+        const colCount = Math.min(100, Math.floor(window.innerHeight / 10));
+
+        calculateGrid(rowCount, colCount);
+    }, []);
 
     const getColor = () => {
         const useWhite = true;
@@ -27,10 +39,10 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
     return (
         <div
             style={{
-                transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
+                transform: `skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
             }}
             className={cn(
-                'absolute -top-1/4 left-1/4 z-0 flex h-full w-full -translate-x-1/2 -translate-y-1/2 p-4',
+                'absolute -translate-x-50 -translate-y-50 z-0 flex h-full w-full p-4',
                 className,
             )}
             {...rest}
