@@ -1,8 +1,8 @@
 'use client'
 
 import { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const form = useRef<HTMLFormElement | null>(null);
@@ -37,7 +37,7 @@ export default function Contact() {
 
     return (
         <div id='contact' className='pb-40 sm:pb-64'>
-            <h1 className='mx-auto max-w-5xl px-8 pb-8 pt-20 text-2xl md:pt-32 md:text-7xl font-bold'>
+            <h1 className='mx-auto max-w-5xl px-8 pb-8 pt-20 text-4xl md:pt-32 md:text-7xl font-bold'>
                 Contact Me
             </h1>
             <form ref={form} onSubmit={sendEmail} className='mx-auto px-12 max-w-[95%] sm:max-w-[90%] md:max-w-2xl lg:max-w-4xl'>

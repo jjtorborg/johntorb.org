@@ -147,7 +147,7 @@ export default function Experience() {
 
     return (
         <div id='experience'>
-            <h1 className='mx-auto max-w-5xl px-8 pb-8 pt-20 text-2xl md:pt-32 md:text-7xl font-bold'>
+            <h1 className='mx-auto max-w-5xl px-8 pb-8 pt-20 text-4xl md:pt-32 md:text-7xl font-bold'>
                 Experience
             </h1>
             <div className='w-full'>

@@ -31,7 +31,7 @@ import JenkinsIcon from 'public/icons/skills/JenkinsIcon';
 export default function Skills() {
     return (
         <div id='skills'>
-            <h1 className='mx-auto max-w-5xl px-8 pt-20 text-2xl md:pt-32 md:text-7xl font-bold'>
+            <h1 className='mx-auto max-w-5xl px-8 pt-20 text-4xl md:pt-32 md:text-7xl font-bold'>
                 Skills
             </h1>
             <div className='max-w-5xl mx-auto px-8'>
