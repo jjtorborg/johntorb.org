@@ -4,7 +4,7 @@ import React from 'react';
 import { cn } from '../../lib/utils';
 import { Boxes } from '../effects/Boxes';
 import { TypewriterEffectSmooth } from '../effects/Typewriter';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 export default function Intro() {
     const nameClass = 'md:text-8xl text-4xl relative z-1 font-bold';

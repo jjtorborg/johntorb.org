@@ -1,8 +1,8 @@
 'use client'
 
 import { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const form = useRef<HTMLFormElement | null>(null);
