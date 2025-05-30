@@ -74,8 +74,8 @@ export default function Header() {
                 </button>
                 {isMenuOpen && (
                     <div 
-                        className='absolute top-full mt-2 w-[150px] bg-(--alt-background) shadow-lg z-20 flex flex-col rounded-md border border-(--alt-border)'
-                        style={{ right: '7px' }}
+                        className='absolute w-[150px] bg-(--alt-background) shadow-lg z-20 flex flex-col rounded-md border border-(--alt-border)'
+                        style={{ top: '48px', right: '7px' }}
                         ref={menuRef}
                     >
                         <nav className='flex flex-col items-start p-4 space-y-2'>
