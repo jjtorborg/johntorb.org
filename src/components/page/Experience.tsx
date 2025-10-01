@@ -4,9 +4,11 @@ import { Timeline } from '../effects/Timeline';
 import RenaissanceLogo from 'public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
 import React from 'react';
+import ClubessentialLogo from 'public/ClubessentialLogo';
 
 export default function Experience() {
     const renaissanceLink = 'https://www.renaissance.com/';
+    const clubessentialLink = 'https://www.clubessential.com/';
     const logoClassName = 'h-6 fill-(--hoverable) group-hover:fill-(--foreground) transition-colors duration-300 ease-in-out';
 
     const [isMobile, setIsMobile] = React.useState(true);
@@ -30,12 +32,29 @@ export default function Experience() {
             content: (
                 <>
                     <ExperienceHeader
+                        title='Software Engineer'
+                        logo={ <ClubessentialLogo className={logoClassName} /> }
+                        logoLink={clubessentialLink}
+                    />
+
+                    <ul className='list-disc mb-8'>
+                        <li>
+                            Designed and developed a web service that provided full-service restaurant reservation booking and table layout
+                            management. Used by &gt;1300 private clubs serving &gt;2M members. Incorporated performance-critical 2D graphics using Konva JS library.
+                        </li>
+                    </ul>
+
+                    <ExperienceHeader
                         title='Software Engineer III'
                         logo={ <RenaissanceLogo className={logoClassName} /> }
                         logoLink={renaissanceLink}
                     />
 
                     <ul className='list-disc'>
+                        <li>
+                            Migrated backend customer-facing databases to PostgreSQL, resulting in &lt;100ms response 
+                            times with &gt;150 RPS (Requests Per Second).
+                        </li>
                         <li>
                             Mentored junior engineers through code reviews, pair programming, and regular 1:1s,
                             fostering growth in technical skills and improving overall team productivity.
