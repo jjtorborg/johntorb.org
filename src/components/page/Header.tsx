@@ -8,7 +8,7 @@ import { FaBars } from 'react-icons/fa';
 import { useEffect } from 'react';
 
 export default function Header() {
-    const resumeUrl = 'https://drive.google.com/file/d/16OjG0IjmhAcIvGNVYkNK5WCOZjnw_6NY/view?usp=drive_link';
+    const resumeUrl = 'https://drive.google.com/file/d/1hXzBOBL-bFKnbuNvSNwMbu1QZJoJYNbf/view?usp=drive_link';
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
