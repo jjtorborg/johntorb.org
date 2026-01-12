@@ -28,7 +28,13 @@ export default function Experience() {
 
     const data = [
         {
-            title: '2025',
+            title: isMobile ? '2025 - 2026' : (
+                <>
+                    2026
+                    <KebabSpacer />
+                    2025
+                </>
+            ),
             content: (
                 <>
                     <ExperienceHeader
