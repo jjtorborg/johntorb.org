@@ -8,12 +8,12 @@ export default function Contact() {
     const form = useRef<HTMLFormElement | null>(null);
     const [isSending, setIsSending] = useState(false);
 
-    const sendEmail = (e: React.FormEvent) => {
+    const sendEmail = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (form.current) {
             setIsSending(true);
-            emailjs.sendForm(
+            await emailjs.sendForm(
                 'service_scbhz6d',
                 'template_2pj5u8m',
                 form.current,
