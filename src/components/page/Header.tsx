@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link';
-import GitHubIcon from 'public/icons/GitHubIcon';
-import LinkedInIcon from 'public/icons/LinkedInIcon';
+import GitHubIcon from '../../../public/icons/GitHubIcon';
+import LinkedInIcon from '../../../public/icons/LinkedInIcon';
 import { useState, useRef } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { useEffect } from 'react';
@@ -105,7 +105,7 @@ export default function Header() {
 export function HeaderTitle() {
     return (
         <Link
-            className='whitespace-nowrap mr-0 px-[20px] py-[5px] text-[32px]'
+            className='whitespace-nowrap mr-0 px-5 py-[5px] text-[32px]'
             href='#home'
         >
             JT
@@ -116,7 +116,7 @@ export function HeaderTitle() {
 export function HeaderLink({ text, link, onClick }: { text: string; link?: string; onClick?: () => void }) {
     return (
         <Link
-            className={`px-[10px] py-[3px] mx-[2px] my-[12px] flex justify-center items-center rounded-[8px] text-(--hoverable) hover:bg-[#1e1e1e] hover:text-(--foreground) transition-colors duration-200 ease-in-out`}
+            className={`px-2.5 py-[3px] mx-0.5 my-3 flex justify-center items-center rounded-lg text-(--hoverable) hover:bg-[#1e1e1e] hover:text-(--foreground) transition-colors duration-200 ease-in-out`}
             href={link ?? `#${text.toLowerCase()}`}
             target={link ? '_blank' : undefined}
             onClick={onClick}

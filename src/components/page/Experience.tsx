@@ -1,10 +1,10 @@
 'use client'
 
 import { Timeline } from '../effects/Timeline';
-import RenaissanceLogo from 'public/RenaissanceLogo';
+import RenaissanceLogo from '../../../public/RenaissanceLogo';
 import ExperienceHeader from './ExperienceHeader';
 import React from 'react';
-import ClubessentialLogo from 'public/ClubessentialLogo';
+import ClubessentialLogo from '../../../public/ClubessentialLogo';
 
 export default function Experience() {
     const renaissanceLink = 'https://www.renaissance.com/';

@@ -4,7 +4,7 @@ import { Toaster } from '../components/effects/Toaster';
 import { Space_Grotesk } from 'next/font/google';
 import { Metadata } from 'next';
 
-import './globals.css'
+import './globals.css';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
