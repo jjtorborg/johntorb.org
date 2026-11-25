@@ -104,12 +104,12 @@ export default function Header() {
 
 export function HeaderTitle() {
     return (
-        <Link
+        <a
             className='whitespace-nowrap mr-0 px-5 py-[5px] text-[32px]'
             href='#home'
         >
             JT
-        </Link>
+        </a>
     );
 }
 
